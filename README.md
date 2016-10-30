@@ -3,11 +3,11 @@ In Amnesty's version of PyBossa, multiple projects can be associated with a pare
 
 Each child project will have the same URL pattern when loading a new task.
 
-What this means is that project short names like decode-darfur-part-1, decode-darfur-part-2, or decode-darfur-part-3 will still be loaded under one common newtask URL, /project/decode-darfur/newtask, where decode-darfur is the parent project's short name.
+What this means is that project short names like _decode-darfur-part-1_, _decode-darfur-part-2_, or _decode-darfur-part-3_ will still be loaded under one common newtask URL, _/project/decode-darfur/newtask_, where _decode-darfur_ is the parent project's short name.
 
 We currently manage this with server side URL rewrites. However, we also need to support this in pybossa.js since there is mechanism there to determin the task url based on the project short name instead of the parent project's short name.
 
-The rest of this README is the repository's original README from when it was forked (commit [62b1f7906d0c3901c6e6f58d311805cc0cfd1b48](https://github.com/Scifabric/pybossa.js/commit/62b1f7906d0c3901c6e6f58d311805cc0cfd1b48))
+The rest of this README is the repository's original README from when it was forked (commit [62b1f7906d0c3901c6e6f58d311805cc0cfd1b48](https://github.com/Scifabric/pybossa.js/commit/62b1f7906d0c3901c6e6f58d311805cc0cfd1b48)).
 
 # PyBossa.JS: a JavaScript for PyBossa.
 
