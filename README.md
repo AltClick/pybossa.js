@@ -1,4 +1,4 @@
-# Amnesty Decoders Fork
+# Amnesty Decoders
 In Amnesty's version of PyBossa, multiple projects can be associated with a parent project.
 
 Each child project will have the same URL pattern when loading a new task.
