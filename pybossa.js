@@ -133,7 +133,7 @@
         });
     }
 
-    function _run (projectname, _window) {
+    function _run (projectname, parentprojectname, _window) {
         _window = _window || window;
         _fetchProject(projectname).done(function(project) {
             project = project[0];
@@ -160,12 +160,23 @@
                 var nextLoaded = getNextTask(1, task),
                 taskSolved = $.Deferred(),
                 nextUrl;
+
+
                 if (task.id) {
                     if (url != '/') {
-                        nextUrl = url + '/project/' + projectname + '/task/' + task.id;
+                        if(parentprojectname != undefined){
+                            nextUrl = url + '/project/' + parentprojectname + '/task/' + task.id;
+                        }else{
+                            nextUrl = url + '/project/' + projectname + '/task/' + task.id;
+                        }
                     }
                     else {
-                        nextUrl = '/project/' + projectname + '/task/' + task.id;
+                        if(parentprojectname != undefined){
+                            nextUrl = '/project/' + parentprojectname + '/task/' + task.id;
+                        }else{
+                            nextUrl = '/project/' + projectname + '/task/' + task.id;
+                        }
+
                     }
                     history.pushState({}, "Title", nextUrl);
                 }
@@ -207,6 +218,10 @@
 
     pybossa.run = function (projectname, _window) {
         return _run(projectname, _window);
+    };
+
+    pybossa.run_under_parent = function (projectname, parentprojectname, _window) {
+        return _run(projectname, parentprojectname, _window);
     };
 
     pybossa.taskLoaded = function (userFunc) {
